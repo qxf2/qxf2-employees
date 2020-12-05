@@ -1,0 +1,3 @@
+email,firstname,lastname,employee_id,skype_id,blog_author_name,phone,github_id,aws_id,trello_id,date_joined,employment_type,is_active
+steinitz@qxf2.com,Wilhelm,Steinitz,WorldChamp001,wilihelm.steinitz.qxf2,user1,188621894,steinitz_qxf2,123456789,steinitzqxf21,01-Feb-86,full,Y
+lasker@qxf2.com,Emmanuel,Lasker,WorldChamp002,emmanuel.lasker.qxf2,user2,189421921,lasker_qxf2,223456789,laskerqxf21,01-Mar-94,full,Y
