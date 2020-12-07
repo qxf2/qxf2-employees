@@ -9,7 +9,7 @@ from flask_graphql_auth import (
     query_header_jwt_required,
     create_refresh_token)
 from employees.models import db_session, Employee as EmployeeModel
-
+import employees.allowed_users as allowed
 
 class Employee(SQLAlchemyObjectType):
     class Meta:
@@ -26,10 +26,13 @@ class AuthMutation(graphene.Mutation):
 
     @classmethod
     def mutate(cls, _, info, username, password):
-        return AuthMutation(
-            access_token=create_access_token(username),
-            refresh_token=create_refresh_token(username),
-        )
+        if username in allowed.USERS.keys() and password == allowed.USERS[username]:
+            return AuthMutation(
+                access_token=create_access_token(username),
+                refresh_token=create_refresh_token(username),
+            )
+        else:
+            return {}
 
 class Mutation(graphene.ObjectType):
     auth = AuthMutation.Field()
