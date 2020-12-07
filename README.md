@@ -13,6 +13,8 @@ This repo is a GraphQL implementation of a single table (employees) using Flask 
     > #You should see a couple of rows
     > .quit
 4. Update `employees/secret.py` with any secret string you want to use
+5. Add a new file called `employees/allowed_users.py` and the following lines:
+    >USERS = {'A_USERNAME_YOU_SELECT':'A_PASSWORD_YOU_SET', 'ANOTHER_USERNAME':'ANOTHER_PASSWORD'}
 5. Start your server with `python run.py`
 
 ### Usage
@@ -21,7 +23,7 @@ This repo is a GraphQL implementation of a single table (employees) using Flask 
 2. Try the following query:
     ```
     mutation {
-        auth(password: "clueless2!", username: "clueless") {
+        auth(password: "A_PASSWORD_YOU_SET", username: "A_USERNAME_YOU_SELECT") {
             accessToken
             refreshToken
             }
